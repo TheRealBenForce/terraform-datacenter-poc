@@ -15,7 +15,7 @@ terraform {
     organization = "example-org-f66d79"
 
     workspaces {
-      name = "dn-main"
+      name = "dns-main"
     }
   }
 }
