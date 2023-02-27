@@ -24,14 +24,20 @@ provider "aws" {
   region = "us-west-2"
 }
 
-resource "aws_route53_zone" "private" {
-  name = "tf.therealbenforce.com"
-  tags = {
-    Environment = "tf subzone"
-  }
+data "aws_route53_zone" "selected" {
+  name         = "therealbenforce.com."
+  private_zone = false
 }
 
-
-output "hosted_zone_id" {
-  value = "foo"
+resource "aws_route53_zone" "terraform-subzone" {
+  name    = "tf.therealbenforce.com"
+  comment = "All subdomains created by terraform will be created here"
 }
+
+//resource "aws_route53_record" "terraform-ns" {
+//  zone_id = data.aws_route53_zone.selected.zone_id
+//  name    = "tf.example.com"
+//  type    = "NS"
+//  ttl     = "30"
+//  records = aws_route53_zone.tf.name_servers
+//}
