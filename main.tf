@@ -15,13 +15,13 @@ terraform {
     organization = "example-org-f66d79"
 
     workspaces {
-      name = "dn-main"
+      name = "dns-main"
     }
   }
 }
 
 provider "aws" {
-  //region = "us-west-2"
+  region = "us-west-2"
 }
 
 resource "aws_route53_zone" "private" {
@@ -32,6 +32,6 @@ resource "aws_route53_zone" "private" {
 }
 
 
-output "hosted_zone_id"  {
+output "hosted_zone_id" {
   value = "foo"
 }
