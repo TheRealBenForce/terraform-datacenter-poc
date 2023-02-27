@@ -36,7 +36,7 @@ resource "aws_route53_zone" "terraform-subzone" {
 
 resource "aws_route53_record" "terraform-ns" {
   zone_id = data.aws_route53_zone.selected.zone_id
-  name    = "tf.example.com"
+  name    = "tf.therealbenforce.com"
   type    = "NS"
   ttl     = "30"
   records = aws_route53_zone.terraform-subzone.name_servers
