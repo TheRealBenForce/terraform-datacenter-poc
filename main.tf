@@ -34,10 +34,10 @@ resource "aws_route53_zone" "terraform-subzone" {
   comment = "All subdomains created by terraform will be created here"
 }
 
-resource "aws_route53_record" "terraform-ns" {
-  zone_id = data.aws_route53_zone.selected.zone_id
-  name    = "tf.example.com"
-  type    = "NS"
-  ttl     = "30"
-  records = aws_route53_zone.tf.name_servers
-}
+//resource "aws_route53_record" "terraform-ns" {
+//  zone_id = data.aws_route53_zone.selected.zone_id
+//  name    = "tf.example.com"
+//  type    = "NS"
+//  ttl     = "30"
+//  records = aws_route53_zone.tf.name_servers
+//}
