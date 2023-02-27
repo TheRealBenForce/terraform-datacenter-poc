@@ -30,7 +30,7 @@ data "aws_route53_zone" "selected" {
 }
 
 resource "aws_route53_zone" "terraform-subzone" {
-  name = "tf.therealbenforce.com"
+  name    = "tf.therealbenforce.com"
   comment = "All subdomains created by terraform will be created here"
 }
 
