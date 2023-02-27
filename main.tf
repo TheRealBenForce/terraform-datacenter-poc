@@ -32,6 +32,6 @@ resource "aws_route53_zone" "private" {
 }
 
 
-output "hosted_zone_id"  {
+output "hosted_zone_id" {
   value = "foo"
 }
