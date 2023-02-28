@@ -1,9 +1,9 @@
 output "hosted_zone_id" {
   description = "Hosted zone ID"
-  value       = data.aws_route53_zone.terraform_subzone.zone_id
+  value       = terraform_subzone.zone_id
 }
 
 output "tf_subzone_name" {
   description = "Subzone where all teraform infrastructure created by pipeline will go"
-  value       = data.aws_route53_zone.terraform_subzone.name
+  value       = terraform_subzone.name
 }
