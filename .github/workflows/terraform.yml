@@ -10,6 +10,9 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./service-provider
     permissions:
       pull-requests: write
     steps:
@@ -29,7 +32,7 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
-      
+
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
