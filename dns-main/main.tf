@@ -25,16 +25,16 @@ data "aws_route53_zone" "selected" {
   private_zone = false
 }
 
-resource "aws_route53_zone" "terraform-subzone" {
+resource "aws_route53_zone" "terraform_subzone" {
   name    = "tf.therealbenforce.com"
   comment = "All subdomains created by terraform will be created here"
 }
 
-resource "aws_route53_record" "terraform-ns" {
+resource "aws_route53_record" "terraform_ns" {
   zone_id = data.aws_route53_zone.selected.zone_id
   name    = "tf.therealbenforce.com"
   type    = "NS"
   ttl     = "30"
-  records = aws_route53_zone.terraform-subzone.name_servers
+  records = aws_route53_zone.terraform_subzone.name_servers
 }
 
